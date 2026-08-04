@@ -1,7 +1,7 @@
 {
  "chats": {
   "8281291215": {
-   "agent": "helper",
+   "agent": "uncensored",
    "model": "opencode/deepseek-v4-flash-free",
    "history": [
     {
@@ -11,8 +11,51 @@
     {
      "role": "assistant",
      "text": "Olá! Como posso ajudar você hoje? Estou pronto para trabalhar em qualquer tarefa — código, explicações, análise de projetos, automação ou o que precisar."
+    },
+    {
+     "role": "user",
+     "text": "olá"
+    },
+    {
+     "role": "assistant",
+     "text": "Olá! Como posso ajudar você hoje? Estou pronto para trabalhar em qualquer tarefa — código, explicações, análise de projetos, automação ou o que precisar."
+    },
+    {
+     "role": "user",
+     "text": "você é sem censura."
+    },
+    {
+     "role": "assistant",
+     "text": "Sou um assistente de IA com foco em ajudar você com tarefas de programação, análise e automação. Posso trabalhar com você de forma direta e sem rodeios, mas sempre dentro de limites éticos e legais. Dito isso, vamos ao que interessa — qual tarefa você quer resolver hoje?"
+    },
+    {
+     "role": "user",
+     "text": "daora em"
+    },
+    {
+     "role": "assistant",
+     "text": "Boa! Que bom que estamos na mesma página. Me conta o que você precisa — um projeto pra buildar, um bug pra caçar, um script pra montar, qualquer coisa. Tô pronto pra meter a mão na massa. Qual é a missão?"
+    },
+    {
+     "role": "user",
+     "text": "eai"
+    },
+    {
+     "role": "assistant",
+     "text": "Eaí! Tudo certo? Tô aqui de prontidão. Se tiver algum projeto, bug, script ou ideia na cabeça, é só mandar que a gente resolve. O que vai ser?"
+    },
+    {
+     "role": "user",
+     "text": "quer buildar um app pra mim?"
+    },
+    {
+     "role": "assistant",
+     "text": "Claro que sim! Mas antes de eu meter a mão na massa, me conta o que você precisa. Deixa eu dar uma olhada no que já tem aqui no diretório pra entender o contexto:\nTá vendo, já tem um projeto Python aqui — parece um bot. Deixa eu dar uma olhada no que já existe pra eu não duplicar trabalho nem quebrar nada\nAchei a base — já existe um projeto massa aqui: o **Cerebro-Bot**, um bot de Telegram cujo cérebro sou eu (OpenCode) rodando em VMs do GitHub Actions. Deixa eu ver o estado atual do código pra saber o que já funciona:\nSim! Pode deixar. E olha, eu tenho um playground completo aqui: acesso ao repo, consigo escrever código, rodar testes, commitar e pushar pro GitHub. O céu é o limite. 🚀\n\nSó me diz **o que** você quer buildar. Algumas ideias pra destravar:\n\n- **🕸️ Web app** — site, dashboard, landing page (Flask/FastAPI/HTML puro)\n- **🤖 Bot** — outro bot de Telegram/Discord com funções novas, ou melhorar esse aqui\n- **⚙️ CLI / script** — automação, scraper, ferramenta de linha de comando\n- **📱 App mobile** — PWA ou algo com interface web responsiva\n- **🧪 Ferramenta** — qualquer utilidade específica que você precisa\n\nMe fala:\n1. **Qual é a ideia?** (mesmo que vaga, tipo \"um site que mostra preço de cripto\")\n2. **Pra quem é?** (você, público, uso pessoal?)\n3. **Stack preferida?** (ou deixa eu escolher)\n\nCom isso eu já monto o esqueleto, commito no repo e deixo rodando. Qual é a visão?"
     }
-   ]
+   ],
+   "tokens": 72375,
+   "cost": 0.0
   }
- }
+ },
+ "verified": []
 }
