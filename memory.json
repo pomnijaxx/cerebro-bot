@@ -1,3 +1,18 @@
 {
- "chats": {}
+ "chats": {
+  "8281291215": {
+   "agent": "helper",
+   "model": "opencode/deepseek-v4-flash-free",
+   "history": [
+    {
+     "role": "user",
+     "text": "hello"
+    },
+    {
+     "role": "assistant",
+     "text": "Olá! Como posso ajudar você hoje? Estou pronto para trabalhar em qualquer tarefa — código, explicações, análise de projetos, automação ou o que precisar."
+    }
+   ]
+  }
+ }
 }
