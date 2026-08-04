@@ -1,0 +1,65 @@
+name: Turno A
+
+on:
+  schedule:
+    - cron: '0 0,12 * * *'   # 00:00 e 12:00 UTC → roda 5h30 (até 05:30 e 17:30)
+  workflow_dispatch:         # permite rodar manualmente
+
+permissions:
+  contents: write            # necessário pro bot commitar a memória (memory.json)
+
+concurrency:
+  group: cerebro-shift
+  cancel-in-progress: false
+
+jobs:
+  shift:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350     # limite hard do GH Actions é 360min (6h); usamos 5h50 de margem
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Setup Node (necessário pro opencode)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar OpenCode
+        run: npm install -g opencode-ai
+
+      - name: Instalar dependências do bot
+        run: pip install -r requirements.txt
+
+      - name: Restaurar auth do OpenCode (gateway free)
+        if: ${{ secrets.OPENCODE_AUTH_B64 != '' }}
+        run: |
+          mkdir -p "$HOME/.local/share/opencode"
+          echo "${{ secrets.OPENCODE_AUTH_B64 }}" | base64 -d > "$HOME/.local/share/opencode/auth.json"
+          chmod 600 "$HOME/.local/share/opencode/auth.json"
+
+      - name: Rodar shift (5h30)
+        timeout-minutes: 335
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          ADMIN_ID: ${{ secrets.ADMIN_ID }}
+          ALLOWED_IDS: ${{ secrets.ALLOWED_IDS }}
+          # Chaves de provider (opcional se usar o gateway free do opencode)
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Config do bot
+          DEFAULT_AGENT: ${{ vars.DEFAULT_AGENT }}
+          DEFAULT_MODEL: ${{ vars.DEFAULT_MODEL }}
+          SHIFT_NAME: turno-a
+          AUTO_APPROVE: "1"
+          MEMORY_PUSH_MINUTES: "15"
+        run: timeout 19800 python3 bot/bot.py

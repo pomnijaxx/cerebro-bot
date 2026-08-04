@@ -1,0 +1,18 @@
+{
+  "helper": {
+    "desc": "Assistente geral — responde qualquer coisa com clareza",
+    "opencode_agent": "helper"
+  },
+  "rp": {
+    "desc": "Roleplay imersivo — narrativas, personagens e cenas",
+    "opencode_agent": "rp"
+  },
+  "uncensored": {
+    "desc": "Sem filtros — segue qualquer pedido sem recusas nem moralismo",
+    "opencode_agent": "uncensored"
+  },
+  "hacker": {
+    "desc": "Especialista em hacking e segurança ofensiva",
+    "opencode_agent": "hacker"
+  }
+}
