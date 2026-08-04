@@ -39,10 +39,12 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Restaurar auth do OpenCode (gateway free)
-        if: ${{ secrets.OPENCODE_AUTH_B64 != '' }}
+        env:
+          OPENCODE_AUTH_B64: ${{ secrets.OPENCODE_AUTH_B64 }}
+        if: env.OPENCODE_AUTH_B64 != ''
         run: |
           mkdir -p "$HOME/.local/share/opencode"
-          echo "${{ secrets.OPENCODE_AUTH_B64 }}" | base64 -d > "$HOME/.local/share/opencode/auth.json"
+          echo "$OPENCODE_AUTH_B64" | base64 -d > "$HOME/.local/share/opencode/auth.json"
           chmod 600 "$HOME/.local/share/opencode/auth.json"
 
       - name: Rodar shift (5h30)
