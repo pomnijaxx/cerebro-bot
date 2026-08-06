@@ -1,7 +1,7 @@
 {
  "chats": {
   "8281291215": {
-   "agent": "helper",
+   "agent": "uncensored",
    "model": "",
    "history": [],
    "tokens": 0,
@@ -10,7 +10,7 @@
    "persona_name": "",
    "system_prompt": "",
    "facts": [],
-   "title": ""
+   "title": "imyourfuckinglord"
   }
  },
  "verified": [],
