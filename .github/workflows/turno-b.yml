@@ -62,4 +62,4 @@ jobs:
           SHIFT_NAME: turno-b
           AUTO_APPROVE: "1"
           MEMORY_PUSH_MINUTES: "15"
-        run: timeout 19800 python3 bot/bot.py
+        run: timeout 19800 python3 bot/bot.py || [ $? -eq 124 ] && true
