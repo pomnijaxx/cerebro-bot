@@ -1,5 +1,18 @@
 {
- "chats": {},
+ "chats": {
+  "8281291215": {
+   "agent": "helper",
+   "model": "",
+   "history": [],
+   "tokens": 0,
+   "cost": 0.0,
+   "lang": "pt",
+   "persona_name": "",
+   "system_prompt": "",
+   "facts": [],
+   "title": ""
+  }
+ },
  "verified": [],
  "blocked": []
 }
