@@ -1,5 +1,18 @@
 {
- "chats": {},
+ "chats": {
+  "8281291215": {
+   "agent": "uncensored",
+   "model": "",
+   "history": [],
+   "tokens": 0,
+   "cost": 0.0,
+   "lang": "pt",
+   "persona_name": "",
+   "system_prompt": "",
+   "facts": [],
+   "title": "imyourfuckinglord"
+  }
+ },
  "verified": [],
  "blocked": []
 }
